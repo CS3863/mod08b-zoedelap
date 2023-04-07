@@ -79,11 +79,13 @@ public class UseData : MonoBehaviour
     void changeSunPosition() {
         tempObj = data[rowCount]["azim"];
         float aziAngle = System.Convert.ToSingle(tempObj);
-        
-        aziAngle = (aziAngle - 73.81f) / (274.24f - 73.81f)*(45+45)-45;
-        Debug.Log(aziAngle);
+        tempObj = data[rowCount]["asza"];
+        float zenAngle = System.Convert.ToSingle(tempObj);
 
-        sunScript.setAzizmuthAngle(aziAngle);
+        aziAngle = (aziAngle - 73.81f) / (274.24f - 73.81f)*(45+45)-45;
+        zenAngle = (zenAngle - 41.88f) / (74.33f - 41.88f)*20 - 20;
+
+        sunScript.setAngle(zenAngle, aziAngle);
     }
 
     Color calculateColor(float xhdo, float xch4, float xco2) {

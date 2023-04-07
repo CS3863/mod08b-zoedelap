@@ -10,7 +10,7 @@ public class SunAppearanceController : MonoBehaviour
         // sun = transform.GetChild(0).gameObject;
     }
 
-    public void setAzizmuthAngle(float angle) {
-        gameObject.transform.localEulerAngles = new Vector3(0.0f, angle, 0.0f);
+    public void setAngle(float zenAngle, float aziAngle) {
+        gameObject.transform.localEulerAngles = new Vector3(zenAngle, aziAngle, 0.0f);
     }
 }
