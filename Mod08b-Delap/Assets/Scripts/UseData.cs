@@ -11,8 +11,8 @@ public class UseData : MonoBehaviour
 
     List<Dictionary<string, object>> data; 
 
-    private float startDelay = 0.5f;
-    private float timeInterval = 0.05f;
+    private float startDelay = 0.0f;
+    private float timeInterval = 0.025f;
 
     private int rowCount = 0;
     private int rowMax;
@@ -44,6 +44,8 @@ public class UseData : MonoBehaviour
             changeSunPosition();
 
             rowCount++;
+
+            if (rowCount % 100 == 0) Debug.Log(rowCount);
         }
     }
 
